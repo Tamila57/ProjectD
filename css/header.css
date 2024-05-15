@@ -1,0 +1,14 @@
+.header{
+    background-color: var(--background-color);
+    background-image: url("https://assets-global.website-files.com/63c65be2b11cea742d60e58e/63c9beb51a3450d4a3a3ef20_bg-elements.svg");
+}
+
+.header__logo{
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+.header__menu__item{
+    text-decoration: none;
+    color: var(--font-color);
+}
