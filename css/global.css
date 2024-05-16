@@ -2,9 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 1230px;
+    margin: 0 auto;
+    position: relative;
   }
 
   :root {
- --background-color: #741FCF;
- --font-color: #E5FFF2;
+ --background-color: #712AD4;
+ --font-color: #F2E5D3;
   }
+
