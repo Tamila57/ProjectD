@@ -39,6 +39,16 @@ img {
     height: 70%;
     margin-bottom: -140px;
     opacity: 1;
+    margin-left: -110px;
+    object-fit: cover;
+    max-width: 270px;
+    max-height: 350px;
+}
+
+img {
+    vertical-align: middle;
+    display: inline-block;
+    border: 0;
 }
 
 .image__container{
@@ -69,5 +79,6 @@ img {
     display: flex;
     position: relative;
     overflow: hidden;
-
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
