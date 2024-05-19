@@ -20,10 +20,10 @@
   color: #333;
 }
 
-.heade__menu {
+/* .header__menu {
   display: flex;
   gap: 5px;
-}
+} */
 
 .header__menu__item {
   font-size: 16px;
@@ -61,10 +61,15 @@
   padding-top: 20pxKs;
 }
 
+.header__sparcle{
+  height: auto;
+}
+
 .home-banner-image {
   max-width: 100%;
   height: auto;
   margin-bottom: 10px;
+  
 }
 
 .home-banner-image-small {
