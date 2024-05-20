@@ -5,9 +5,15 @@
   max-width: 1230px;
   margin: 0 auto;
   position: relative;
+  background-color: var(--header-background-color);
 }
 
 :root {
-  --background-color: #712ad4;
-  --font-color: #f2e5d3;
+  --header-background-color: #f8f8f8;
+  --menu-color: #333;
+  --hover-color: #b260fb;
+  --line-color: #ccc;
+  --header-description: #777676;
+  --button-color: #fff;
+  --menu-mobile-background: #e9d6fc;
 }
