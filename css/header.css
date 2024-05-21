@@ -5,10 +5,9 @@
   display: none;
 }
 
-/* Header styles */
 .header {
-  background-color: #f8f8f8;
-  padding: 20px;
+  background-color: var(--header-background-color);
+  padding: 30px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -37,16 +36,16 @@
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: var(--menu-color);
 }
 
 .header__logo__menu:hover {
-  color: #777676;
+  color: var(--header-description);
 }
 
 .line {
   margin: 0 10px;
-  border-top: 2px solid #333;
+  border-top: 2px solid var(--menu-color);
   width: 2px;
   height: 40px;
 }
@@ -56,7 +55,7 @@
   padding-top: 10px;
 }
 
-/* Homepage styles */
+
 .header__homepage {
   text-align: center;
 }
@@ -73,27 +72,30 @@
 .header__title {
   font-size: 36px;
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .header__description {
   font-size: 18px;
   margin-top: 10px;
-  color: #777676;
+  color: var(--header-description);
+  padding-bottom: 30px;
 }
 
 .header__button {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--menu-color);
+  color: var(--button-color);
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
+  text-decoration: none;
 }
 
 .header__button:hover {
-  background-color: #777676;
+  background-color: var(--hover-color);
 }
 
 @media (max-width: 700px) {
