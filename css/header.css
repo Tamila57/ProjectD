@@ -25,6 +25,7 @@
 
 .header__menu__item {
   font-size: 20px;
+  font-family: var(--font-for-title);
   text-decoration: none;
   color: var(--menu-color);
 }
@@ -38,6 +39,7 @@
   font-weight: bold;
   text-decoration: none;
   color: var(--menu-color);
+  font-family: var(--font-for-logo);
 }
 
 .header__logo__menu:hover {
@@ -64,6 +66,7 @@
 
 .image__container {
   margin-top: 50px;
+  padding-right: 50px;
 }
 
 .home-banner-image {
@@ -76,13 +79,16 @@
   font-size: 36px;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: var(--font-for-title);
 }
 
 .header__description {
-  font-size: 18px;
+  font-size: 22px;
+  font-family: var(--font-for-desriptions);
   margin-top: 10px;
   color: var(--header-description);
   padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .homepage__section{
@@ -94,8 +100,9 @@
   background-color: var(--menu-color);
   color: var(--button-color);
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 20px;
+  font-family: var(--font-for-buttons);
   border-radius: 5px;
   cursor: pointer;
   margin-top: 20px;
@@ -127,6 +134,7 @@
     font-weight: bold;
     text-decoration: none;
     color: var(--menu-color);
+    font-family: var(--font-for-logo);
   }
 
   .homepage__section{
@@ -139,6 +147,7 @@
     font-weight: bold;
     text-decoration: none;
     color: var(--menu-color);
+    font-family: var(--font-for-logo);
   }
 
   .header__logo__burger {
@@ -164,12 +173,6 @@
     color: var(--hover-color);
   }
 
-  /* .header__menu__item img {
-  width: 24px;
-  height: 24px;
-  margin-left: 20px;
-} */
-
   .cart {
     max-width: 9%;
     padding-top: 10px;
@@ -180,6 +183,7 @@
     border-top: 1px solid var(--line-color);
     width: 100%;
     margin: 10px 0;
+    height: 0;
   }
 
   .header__homepage {
@@ -190,7 +194,7 @@
 
   .image__container {
     margin-bottom: 20px;
-    padding-top: 20pxKs;
+    padding-right: 0;
   }
 
   .home-banner-image {
@@ -199,12 +203,6 @@
     margin-bottom: 10px;
   }
 
-  /* .home-banner-image-small {
-  max-width: 50%;
-  height: auto;
-  margin-bottom: 10px;
-} */
-
   .header__title {
     font-size: 36px;
     margin-bottom: 10px;
@@ -212,9 +210,8 @@
   }
 
   .header__description {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--header-description);
-    margin-bottom: 20px;
   }
 
   .header__button {
