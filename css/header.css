@@ -85,9 +85,9 @@
   margin-bottom: 20px;
 }
 
-.homepage__section{
- margin: auto;
- padding-left: 150px;
+.homepage__section {
+  margin: auto;
+  padding-left: 150px;
 }
 
 .header__button {
@@ -131,9 +131,9 @@
     font-family: var(--font-for-logo);
   }
 
-  .homepage__section{
-   padding: 0;
-   }
+  .homepage__section {
+    padding: 0;
+  }
 
   .header__logo {
     display: flex;
@@ -273,7 +273,8 @@
     transform: rotate(-45deg) translateY(-2px);
   }
 
-  .burger__menu.burgerX{
+  .burger__menu.active {
     position: fixed;
+    margin-left: 207px;
   }
 }
