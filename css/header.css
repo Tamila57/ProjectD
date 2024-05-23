@@ -46,16 +46,10 @@
   color: var(--header-description);
 }
 
-.line {
-  margin: 0 10px;
-  border-top: 2px solid var(--menu-color);
-  width: 2px;
-  height: 40px;
-}
-
 .cart {
   max-width: 4%;
   padding-top: 10px;
+  padding-bottom: 12px;
 }
 
 .header__homepage {
@@ -277,5 +271,9 @@
 
   .burger__menu.active span:last-child {
     transform: rotate(-45deg) translateY(-2px);
+  }
+
+  .burger__menu.burgerX{
+    position: fixed;
   }
 }
