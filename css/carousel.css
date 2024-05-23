@@ -38,6 +38,11 @@
   color: var(--header-description);
   font-weight: 500;
   font-family: var(--font-for-desriptions);
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-left: 40px;
+  margin-right: 45px;
+
 }
 
 @media (max-width: 700px) {
@@ -60,5 +65,6 @@
 
   .carousel {
     padding-top: 40px;
+    margin-left: 40px;
   }
 }
