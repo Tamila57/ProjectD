@@ -1,4 +1,37 @@
-.products {
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  max-width: 1230px;
+  margin: auto;
+  position: relative;
+  background-color: var(--header-background-color);
+}
+
+:root {
+  --header-background-color: #f8f8f8;
+  --menu-color: #333;
+  --hover-color: #b260fb;
+  --line-color: #ccc;
+  --header-description: #777676;
+  --button-color: #fff;
+  --menu-mobile-background: #e9d6fc;
+  --newsletter-color: #7347aa;
+  --card-background-color: #f9f9f9;
+  --color-for-newsletter: rgba(0, 0, 0, 0);
+  --font-for-logo: "Yeseva One";
+  --font-for-title: "Hammersmith One";
+  --font-for-desriptions: "Outfit";
+  --font-for-buttons: "Platypi";
+}
+
+.products,
+.shop__header__menu {
   background-color: var(--header-background-color);
   padding: 20px;
   display: flex;
@@ -14,14 +47,70 @@
   color: var(--header-background-color);
 }
 
+.burger__menu {
+  display: none;
+}
+
+.shop__logo {
+  display: none;
+}
+
+.shop {
+  background-color: var(--header-background-color);
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.header__nav__menu {
+  display: flex;
+}
+
+.shop__menu {
+  display: flex;
+  align-items: center;
+}
+
+.shop__menu__item {
+  font-size: 20px;
+  font-family: var(--font-for-title);
+  text-decoration: none;
+  color: var(--menu-color);
+}
+
+.shop__menu__item:hover {
+  color: var(--hover-color);
+}
+
+.shop__logo__menu {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--menu-color);
+  font-family: var(--font-for-logo);
+}
+
+.shop__logo__menu:hover {
+  color: var(--header-description);
+}
+
+.cart {
+  max-width: 4%;
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
 .products {
   padding: 20px;
 }
 
 .products__title {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 30px;
   margin-bottom: 20px;
+  font-family: var(--font-for-title);
+  font-weight: 100;
 }
 
 .products__list {
@@ -33,9 +122,9 @@
 .product-card {
   width: calc(25% - 10px);
   margin-bottom: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--card-background-color);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px var(--menu-color);
   padding: 20px;
   transition: transform 0.3s ease;
 }
@@ -50,18 +139,27 @@
 }
 
 .product-card__h3 {
-  font-size: 1.2rem;
+  font-size: 22px;
   margin-top: 10px;
+  text-align: center;
+  font-family: var(--font-for-title);
+  font-weight: 100;
 }
 
 .product-card__description {
-  font-size: 0.9rem;
+  font-size: 17px;
   margin-bottom: 10px;
+  text-align: center;
+  font-family: var(--font-for-desriptions);
+  color: var(--header-description);
 }
 
 .product__price {
-  font-size: 1rem;
+  font-size: 17px;
   margin-bottom: 10px;
+  padding-top: 10px;
+  font-family: var(--font-for-title);
+  font-weight: 600;
 }
 
 .product-card__buttons {
@@ -70,30 +168,137 @@
 }
 
 .product-card__buttons-buy {
-  padding: 8px 16px;
-  background-color: #007bff;
-  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: var(--menu-color);
+  color: var(--button-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 1199px) {
-  .product-card {
-    width: calc(33.33% - 10px);
-  }
+.product-card__buttons-buy:hover {
+  background-color: var(--hover-color);
 }
 
-@media screen and (max-width: 991px) {
-  .product-card {
-    width: calc(50% - 10px);
-  }
-}
 
-@media screen and (max-width: 767px) {
+@media (max-width: 700px) {
   .product-card {
     width: calc(100% - 20px);
+  }
+  .header__nav__menu {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .shop__logo__menu {
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--menu-color);
+    font-family: var(--font-for-logo);
+  }
+  .shop__logo {
+    display: flex;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--menu-color);
+    font-family: var(--font-for-logo);
+  }
+
+  .shop__logo__burger {
+    display: inline-flex;
+    gap: 165px;
+    padding-top: 10px;
+  }
+
+  .shop__menu {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    line-height: 2;
+  }
+
+  .shop__menu__item {
+    font-size: 20px;
+    text-decoration: none;
+    color: var(--menu-color);
+  }
+
+  .shop__menu__item:hover {
+    color: var(--hover-color);
+  }
+
+  .cart {
+    max-width: 9%;
+    padding-top: 10px;
+  }
+
+  .line {
+    border: none;
+    border-top: 1px solid var(--line-color);
+    width: 100%;
+    margin: 10px 0;
+    height: 0;
+  }
+
+  .header__nav__menu {
+    position: fixed;
+    background: var(--header-background-color);
+    height: 100vh;
+    width: 50%;
+    right: -100%;
+    top: 0;
+    z-index: 100;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transition: 0.5s;
+  }
+
+  .header__nav__menu.active {
+    right: 0;
+    width: 100%;
+  }
+
+  .burger__menu {
+    display: block;
+    z-index: 110;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  .burger__menu span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--menu-color);
+    margin-bottom: 5px;
+    transition: 0.3s;
+  }
+
+  .burger__menu.active span {
+    margin: 0;
+  }
+
+  .burger__menu.active span:first-child {
+    transform: rotate(45deg) translateY(2px);
+  }
+
+  .burger__menu.active span:nth-child(2) {
+    display: none;
+  }
+
+  .burger__menu.active span:last-child {
+    transform: rotate(-45deg) translateY(-2px);
+  }
+
+  .burger__menu.active {
+    position: fixed;
+    margin-left: 207px;
   }
 }

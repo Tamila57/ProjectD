@@ -1,3 +1,7 @@
+document.addEventListener("partialsLoaded", () => {
+    import("./burgerMenu.js");
+  });
+
 const products = [
     {
         id: '1',
@@ -55,9 +59,9 @@ function renderProducts(products) {
             </p>
             <p class="product__price">${product.price} USD</p>
             <div class="product-card__buttons">
-                <button class="product-card__buttons-buy button button-card">
-                    Buy 
-                </button>
+                <a href="#" class="product-card__buttons-buy">
+                    Add to cart 
+                </a>
             </div>
         </article>`;
     }

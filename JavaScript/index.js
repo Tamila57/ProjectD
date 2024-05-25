@@ -1,6 +1,3 @@
-document.addEventListener("partialsLoaded", () =>{
-    import("./burgerMenu.js");
-    // import("./shop.js");
-
-    
+document.addEventListener("partialsLoaded", () => {
+  import("./burgerMenu.js");
 });
