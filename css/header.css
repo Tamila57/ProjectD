@@ -21,6 +21,7 @@
 .header__menu {
   display: flex;
   align-items: center;
+  gap: 70px;
 }
 
 .header__menu__item {
@@ -155,6 +156,7 @@
     flex-direction: column;
     padding: 5px;
     line-height: 2;
+    gap: 0;
   }
 
   .header__menu__item {

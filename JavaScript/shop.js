@@ -59,8 +59,8 @@ function renderProducts(products) {
             </p>
             <p class="product__price">${product.price} USD</p>
             <div class="product-card__buttons">
-                <a href="#" class="product-card__buttons-buy">
-                    Add to cart 
+                <a href="#" class="product-card__buttons-buy" data-product-id="${product.id}">
+                    Order 
                 </a>
             </div>
         </article>`;
@@ -69,4 +69,59 @@ function renderProducts(products) {
     productsContainer.innerHTML = productsHtml;
 }
 
-renderProducts(products);
+// function handleOrderButtonClick(event) {
+//     event.preventDefault();
+//     const productId = event.target.dataset.productId;
+//     const product = products.find(item => item.id === productId);
+//     if (product) {
+        
+//         console.log(`Ordering ${product.title}`);
+//     }
+// }
+
+function createOrderForm(product) {
+    // Створення форми для замовлення
+    const form = document.createElement('form');
+    form.innerHTML = `
+        <h2>Order ${product.title}</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <input type="hidden" name="product_id" value="${product.id}">
+        <button type="submit">Submit</button>
+    `;
+
+    // Обробник події для відправки форми замовлення
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const formDataObject = Object.fromEntries(formData.entries());
+        console.log('Order:', formDataObject); // Тут ви можете відправити дані форми на сервер або виконати інші дії з ними
+        // Очищення форми після відправки
+        form.remove();
+    });
+
+    return form;
+}
+
+function handleOrderButtonClick(event) {
+    event.preventDefault();
+    const productId = event.target.dataset.productId;
+    const product = products.find(item => item.id === productId);
+    if (product) {
+        // Створення та відображення форми замовлення
+        const orderForm = createOrderForm(product);
+        document.body.appendChild(orderForm);
+    }
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts(products);
+
+    const orderButtons = document.querySelectorAll('.product-card__buttons-buy');
+    orderButtons.forEach(button => {
+        button.addEventListener('click', handleOrderButtonClick);
+    });
+});
