@@ -1,49 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Magic Shop</title>
+    <link rel="shortcut icon" href="img/sparcle.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/shop.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Magic Shop</title>
-  <link rel="shortcut icon" href="img/sparcle.png" type="image/x-icon">
-  <link rel="stylesheet" href="./css/shop.css">
-</head>
+  <body>
+    <main>
+      <div class="shop__header__menu">
+        <nav class="header__nav__menu">
+          <div class="shop__menu" data-proofer-ignore>
+            <a href="index.html" class="shop__logo__menu">Magic Shop</a>
+            <hr class="line" />
+            <a href="shop.html" class="shop__menu__item">Shop</a>
+            <a href="index.html#newCollection" class="shop__menu__item"
+              >New Collection</a
+            >
+            <a href="index.html" class="shop__menu__item">About us</a>
+            <a href="index.html#footerContacts" class="shop__menu__item"
+              >Contacts</a
+            >
+          </div>
+        </nav>
 
-<body>
-  <main>
-    <div class="shop__header__menu">
-    <nav class="header__nav__menu">
-      <div class="shop__menu">
-        <a href="index.html" class="shop__logo__menu">Magic Shop</a>
-        <hr class="line" />
-        <a href="shop.html" class="shop__menu__item">Shop</a>
-        <a href="index.html#newCollection" class="shop__menu__item">New Collection</a>
-        <a href="index.html" class="shop__menu__item">About us</a>
-        <a href="index.html#footerContacts" class="shop__menu__item"
-          >Contacts</a
-        >
-        <img src="img/shopping-cart.png" alt="icon" class="cart" />
+        <div class="shop__logo__burger">
+          <a href="index.html" class="shop__logo">Magic Shop</a>
+          <div class="burger__menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </div>
-    </nav>
-  
-    <div class="shop__logo__burger">
-      <a href="index.html" class="shop__logo">Magic Shop</a>
-      <div class="burger__menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </div>
-    <section class="products">
+      <section class="products">
         <h2 id="products" class="products__title">New Collection</h2>
         <div class="products__list"></div>
       </section>
-  </main>
+    </main>
 
-  <script src="https://unpkg.com/html-data-include@3.3.3/html-data-include.js"></script>
-  <script src="JavaScript/shop.js"></script>
-</body>
-
+    <script src="https://unpkg.com/html-data-include@3.3.3/html-data-include.js"></script>
+    <script src="JavaScript/shop.js"></script>
+  </body>
 </html>

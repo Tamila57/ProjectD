@@ -70,6 +70,7 @@
 .shop__menu {
   display: flex;
   align-items: center;
+  gap: 70px;
 }
 
 .shop__menu__item {
@@ -183,6 +184,21 @@
   background-color: var(--hover-color);
 }
 
+.form__button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: var(--menu-color);
+  color: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.form__button:hover {
+  background-color: var(--hover-color);
+}
 
 @media (max-width: 700px) {
   .product-card {
@@ -222,6 +238,7 @@
     flex-direction: column;
     padding: 5px;
     line-height: 2;
+    gap: 0;
   }
 
   .shop__menu__item {
