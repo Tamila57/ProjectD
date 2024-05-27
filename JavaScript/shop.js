@@ -51,6 +51,22 @@ const products = [
     price: 99.99,
     image: "img/MagicWinterRing.jpg",
   },
+  {
+    id: "7",
+    title: "Magic Moonstone",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro fuga autem possimus eveniet facere, non minus magnam obcaecati, tenetur recusandae, corporis itaque suscipit. Vero illo nulla asperiores laudantium tempore porro!",
+    price: 100.99,
+    image: "img/RainbowMoonstoneGemstone.jpg",
+  },
+  {
+    id: "8",
+    title: "Magic Crystal Necklace",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro fuga autem possimus eveniet facere, non minus magnam obcaecati, tenetur recusandae, corporis itaque suscipit. Vero illo nulla asperiores laudantium tempore porro!",
+    price: 150.99,
+    image: "img/MagicCrystalNecklaceSmall.jpg",
+  },
 ];
 
 function renderProducts(products) {
@@ -80,21 +96,25 @@ function createOrderForm(product) {
   form.setAttribute("method", "POST");
 
   form.innerHTML = `
-  <div class="form-status"></div>
+  <div class="order__form">
         <h2 class="form__title">Order ${product.title}</h2>
-        <input type="text" id="name" name="name" 
-        placeholder="Enter your name*"
-        required class="form__item">
-        <input type="email" id="email" name="email"
-        placeholder="Enter your e-mail*"
-         required class="form__item">
-         <input type="text" id="quantity" name="quantity" 
-        placeholder="Enter quantity of product*"
-        required class="form__item">
-        <input type="hidden" name="product_id" value="${product.id}">
-        <input type="hidden" name="product_name" value="${product.title}">
-        <button type="submit" class="form__button">Submit</button>
-        
+          <input type="text" id="name" name="name" 
+              placeholder="Enter your name*"
+                required class="form__item">
+          <input type="email" id="email" name="email"
+              placeholder="Enter your e-mail*"
+                  required class="form__item">
+          <input type="text" id="quantity" name="quantity" 
+              placeholder="Enter quantity of product*"
+                  required class="form__item">
+          <input type="hidden" name="product_id" value="${product.id}">
+          <input type="hidden" name="product_name" value="${product.title}">
+
+        <div class="form__buttons">
+          <button type="submit" class="form__button">Submit</button>
+          <button type="undo" class="form__button__undo">Undo</button>
+        </div>
+        </div>
     `;
 
   form.addEventListener("submit", async (event) => {
@@ -103,7 +123,6 @@ function createOrderForm(product) {
     const formDataObject = Object.fromEntries(formData.entries());
 
     try {
-      const status = document.querySelector(".form-status");
       const response = await fetch(form.getAttribute("action"), {
         method: form.getAttribute("method"),
         body: formData,
@@ -113,14 +132,20 @@ function createOrderForm(product) {
       });
 
       if (response.ok) {
-        status.innerHTML = "Thanks for your submission!";
+        alert("Thanks for your submission!");
         form.remove();
       } else {
-        status.innerHTML = "Form submission failed!";
+        alert("Form submission failed!");
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      alert("Error submitting form:", error);
     }
+  });
+
+  const undoButton = form.querySelector(".form__button__undo");
+  undoButton.addEventListener("click", () => {
+    form.remove();
+    alert("order cancelled");
   });
 
   return form;

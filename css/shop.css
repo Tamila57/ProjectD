@@ -20,6 +20,8 @@
   --line-color: #ccc;
   --header-description: #777676;
   --button-color: #fff;
+  --submit-color: #28a745;
+  --undo-color: #dc3545;
   --menu-mobile-background: #e9d6fc;
   --newsletter-color: #7347aa;
   --card-background-color: #f9f9f9;
@@ -184,19 +186,64 @@
   background-color: var(--hover-color);
 }
 
+.order__form {
+  background-color: var(--header-background-color);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.form__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-family: var(--font-for-title);
+}
+
+.form__item {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 50%;
+  border: 1px solid var(--line-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: var(--font-for-desriptions);
+}
+
 .form__button {
   padding: 10px 20px;
   font-size: 18px;
-  background-color: var(--menu-color);
+  background-color: var(--submit-color);
   color: var(--button-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  text-decoration: none;
+  font-family: var(--font-for-buttons);
 }
 
 .form__button:hover {
+  background-color: var(--hover-color);
+}
+
+.form__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.form__button__undo {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: var(--undo-color);
+  color: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: var(--font-for-buttons);
+}
+.form__button__undo:hover {
   background-color: var(--hover-color);
 }
 
@@ -317,5 +364,9 @@
   .burger__menu.active {
     position: fixed;
     margin-left: 207px;
+  }
+
+  .form__item {
+    width: 100%;
   }
 }
