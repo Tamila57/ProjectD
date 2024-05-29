@@ -246,7 +246,10 @@
 @media (max-width: 700px) {
   .product-card {
     width: calc(100% - 20px);
+    margin-top: 20px;
+    margin-left: 11px;
   }
+
   .header__nav__menu {
     display: flex;
     align-items: center;
@@ -261,6 +264,7 @@
     color: var(--menu-color);
     font-family: var(--font-for-logo);
   }
+
   .shop__logo {
     display: flex;
     font-size: 23px;
@@ -300,10 +304,6 @@
     width: 100%;
     margin: 10px 0;
     height: 0;
-  }
-
-  .product-card {
-    margin: auto;
   }
 
   .header__nav__menu {
