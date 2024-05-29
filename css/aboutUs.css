@@ -1,0 +1,7 @@
+.aboutUs{
+    background-color: var(--header-background-color);
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }

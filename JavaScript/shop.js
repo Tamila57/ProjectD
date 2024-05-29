@@ -151,15 +151,27 @@ function createOrderForm(product) {
   return form;
 }
 
+// function handleOrderButtonClick(event) {
+//   event.preventDefault();
+//   const productId = event.target.dataset.productId;
+//   const product = products.find((item) => item.id === productId);
+//   if (product) {
+//     const orderForm = createOrderForm(product);
+//     document.body.appendChild(orderForm);
+//   }
+// }
+
 function handleOrderButtonClick(event) {
   event.preventDefault();
   const productId = event.target.dataset.productId;
   const product = products.find((item) => item.id === productId);
   if (product) {
     const orderForm = createOrderForm(product);
-    document.body.appendChild(orderForm);
+    const firstChild = document.body.firstChild;
+    document.body.insertBefore(orderForm, firstChild);
   }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   renderProducts(products);
