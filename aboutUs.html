@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Magic Shop</title>
     <link rel="shortcut icon" href="img/sparcle.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./css/shop.css" />
-     <link rel="stylesheet" href="./css/index.css" />
-     <link rel="stylesheet" href="./css/aboutUs.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/aboutUs.css" />
   </head>
 
   <body>
@@ -41,16 +47,117 @@
 
       <section id="about-us">
         <div class="container">
-          <h1>About Us</h1>
-          <p>Welcome to Magic Shop, your one-stop destination for all your magical needs. We are dedicated to providing the finest quality magical products to our customers.</p>
-          <p>At Magic Shop, we believe in the power of magic to inspire, entertain, and bring joy to people's lives. Whether you're a beginner or an experienced magician, we have everything you need to create unforgettable moments of wonder.</p>
-          <p>Our team of experts is passionate about magic and is here to assist you with any questions or assistance you may need. We strive to offer exceptional customer service and ensure your shopping experience with us is magical.</p>
-          <p>Thank you for choosing Magic Shop. Let's make some magic together!</p>
+          <h1 class="about-us__title">About Us</h1>
+          <p class="about-us__firstP">
+            Welcome to the "Magic Shop" - your virtual shopping center for
+            magical jewelry! At "Magic Shop" we believe in the power of magic,
+            which is hidden in every person. Our store is designed for those who
+            are looking for sophistication, mystery and elegance in their lives.
+          </p>
+          <div class="secondP__carousel">
+          <p class="about-us__secondP">
+            Our new collection includes "magical" rings that not only adorn your
+            fingers, but also bring with them an elusive energy and vibration to
+            help you make your life more magical. Each ring is carefully crafted
+            using the finest materials and great attention to detail.
+          </p>
+          <div
+            id="carouselExampleAutoplaying"
+            class="carousel slide container"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="img/MagicEternalCirclesRing.jpg"
+                  class="d-block w-75 mx-auto"
+                  alt="EternalCirclesRing"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/MAgicForestRing.jpg"
+                  class="d-block w-75 mx-auto"
+                  alt="ForestRing"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/MagicLionFlashRing.jpg"
+                  class="d-block w-75 mx-auto"
+                  alt="LionFlashRing"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/MagicSunRing.jpg"
+                  class="d-block w-75 mx-auto"
+                  alt="SunRing"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/MagicWoodRing.jpg"
+                  class="d-block w-75 mx-auto"
+                  alt="WoodRing"
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/MagicWinterRing.jpg"
+                  class="d-block w-75 mx-auto"
+                  alt="WinterRing"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleAutoplaying"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          </div>
+          <p class="about-us__thirdP">
+            In our assortment, you will also find charming neck jewelry that
+            will add mystery to your image and make you a real star at any
+            event.
+          </p>
+          <p class="about-us__lastP">
+            At "Magic Shop" we work to make each of our customers feel special
+            by choosing our unique jewelry. We believe that everyone has magic
+            within them, and our mission is to help you find it and express it
+            through our magical products. Discover the world of elegance and
+            magic in the "Magic Shop"!
+          </p>
         </div>
       </section>
     </main>
     <footer data-include="index.footer.partial.html"></footer>
     <script src="https://unpkg.com/html-data-include@3.3.3/html-data-include.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="JavaScript/shop.js"></script>
   </body>
 </html>

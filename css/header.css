@@ -47,12 +47,6 @@
   color: var(--header-description);
 }
 
-.cart {
-  max-width: 4%;
-  padding-top: 10px;
-  padding-bottom: 12px;
-}
-
 .header__homepage {
   display: flex;
   flex-direction: row-reverse;
@@ -167,11 +161,6 @@
 
   .header__menu__item:hover {
     color: var(--hover-color);
-  }
-
-  .cart {
-    max-width: 9%;
-    padding-top: 10px;
   }
 
   .line {

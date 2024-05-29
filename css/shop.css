@@ -98,12 +98,6 @@
   color: var(--header-description);
 }
 
-.cart {
-  max-width: 4%;
-  padding-top: 10px;
-  padding-bottom: 12px;
-}
-
 .products {
   padding: 20px;
 }
@@ -130,6 +124,8 @@
   box-shadow: 0 2px 4px var(--menu-color);
   padding: 20px;
   transition: transform 0.3s ease;
+  margin: 0;
+  margin-top: 20px;
 }
 
 .product-card:hover {
@@ -298,17 +294,16 @@
     color: var(--hover-color);
   }
 
-  .cart {
-    max-width: 9%;
-    padding-top: 10px;
-  }
-
   .line {
     border: none;
     border-top: 1px solid var(--line-color);
     width: 100%;
     margin: 10px 0;
     height: 0;
+  }
+
+  .product-card {
+    margin: auto;
   }
 
   .header__nav__menu {
