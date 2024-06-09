@@ -7,7 +7,7 @@ const products = [
     id: "1",
     title: "Eternal Circles Ring",
     description:
-      "Unveil timeless elegance with our 'Eternal Circles Ring'. Symbolizing infinite connection, this enchanting piece adds a touch of mystique to any ensemble. Embrace eternal beauty today!",
+      "Unveil timeless elegance with our 'Eternal Circles Ring'. Symbolizing infinity, this enchanting piece adds a touch of mystique to any ensemble. Embrace eternal beauty today!",
     price: 49.99,
     image: 'img/MagicEternalCirclesRing.jpg"',
   },
@@ -23,7 +23,7 @@ const products = [
     id: "3",
     title: "Magic Lion Flash Ring",
     description:
-      "Channel the fierce elegance of the jungle with our 'Magic Lion Flash Ring'. Crafted with intricate detail, this ring exudes regal power and mystical allure.",
+      "Channel the fierce elegance of the jungle with our 'Magic Lion Flash Ring'. Crafted with intricate detail, this ring exudes regal power and mystical allure of lion.",
     price: 75,
     image: "img/MagicLionFlashRing.jpg",
   },
@@ -47,7 +47,7 @@ const products = [
     id: "6",
     title: "Magic Winter Ring",
     description:
-      "Embrace the enchantment of the season with our 'Magic Winter Ring'. Inspired by frosty beauty, this captivating piece brings the sparkle and magic of winter to your fingertips.",
+      "Embrace the enchantment of the season with our 'Magic Winter Ring'. Inspired by frosty beauty, this captivating piece brings the cold sparkle and magic of winter to your fingertips.",
     price: 99.99,
     image: "img/MagicWinterRing.jpg",
   },
@@ -97,18 +97,23 @@ function createOrderForm(product) {
 
   form.innerHTML = `
   <div class="order__form">
-        <h2 class="form__title">Order ${product.title}</h2>
+        <h2 class="form__title">Order Form</h2>
+        <input  name="product_name" value="${product.title}" class="form__item" readonly >
           <input type="text" id="name" name="name" 
               placeholder="Enter your name*"
-                required class="form__item">
+                required class="form__item"> 
           <input type="email" id="email" name="email"
               placeholder="Enter your e-mail*"
+                  required class="form__item">
+                  <input type="phone" id="phone_number" name="phoneNumber"
+              placeholder="Enter your phone number*"
+              pattern="[0-9]{12}" title="Phone number must be 12 digits long"
                   required class="form__item">
           <input type="text" id="quantity" name="quantity" 
               placeholder="Enter quantity of product*"
                   required class="form__item">
           <input type="hidden" name="product_id" value="${product.id}">
-          <input type="hidden" name="product_name" value="${product.title}">
+          
 
         <div class="form__buttons">
           <button type="submit" class="form__button">Submit</button>
@@ -132,7 +137,7 @@ function createOrderForm(product) {
       });
 
       if (response.ok) {
-        alert("Thanks for your submission!");
+        alert("Thanks For Your Order!");
         form.remove();
       } else {
         alert("Form submission failed!");
@@ -145,30 +150,40 @@ function createOrderForm(product) {
   const undoButton = form.querySelector(".form__button__undo");
   undoButton.addEventListener("click", () => {
     form.remove();
-    alert("order cancelled");
+    alert("Order cancelled");
   });
 
   return form;
 }
 
-// function handleOrderButtonClick(event) {
-//   event.preventDefault();
-//   const productId = event.target.dataset.productId;
-//   const product = products.find((item) => item.id === productId);
-//   if (product) {
-//     const orderForm = createOrderForm(product);
-//     document.body.appendChild(orderForm);
-//   }
-// }
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+const orderedProducts = {};
 
 function handleOrderButtonClick(event) {
   event.preventDefault();
   const productId = event.target.dataset.productId;
   const product = products.find((item) => item.id === productId);
   if (product) {
-    const orderForm = createOrderForm(product);
-    const firstChild = document.body.firstChild;
-    document.body.insertBefore(orderForm, firstChild);
+    if (orderedProducts[productId]) {
+      const form = orderedProducts[productId];
+      const productNameInput = form.querySelector('input[name="product_name"]');
+      const productIdInput = form.querySelector('input[name="product_id"]');
+      productNameInput.value += `, ${product.title}`;
+      productIdInput.value += `, ${product.id}`;
+      alert("Product Added!");
+      scrollToTop();
+    } else {
+      const orderForm =
+        orderedProducts[Object.keys(orderedProducts)[0]] ||
+        createOrderForm(product);
+      document.body.insertBefore(orderForm, document.body.firstChild);
+      orderedProducts[productId] = orderForm;
+    }
   }
 }
 
